@@ -4,7 +4,11 @@
     <option value="About">About</option>
   </select>
 
-  <component :is="componentName"></component>
+  <!-- By default dynamic components lose all data on unmoant -->
+  <!-- using keep-alive vue will save in memory the component and its data-->
+  <keep-alive>
+    <component :is="componentName"></component>
+  </keep-alive>
 </template>
 
 <script>
